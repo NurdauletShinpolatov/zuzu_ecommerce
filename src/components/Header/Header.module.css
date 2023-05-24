@@ -1,0 +1,26 @@
+.header {
+    padding: 5px 5%;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__left, .header__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+    background: var(--cl-light-gray);
+    border-radius: 100px;
+    
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--cl-black);
+}
