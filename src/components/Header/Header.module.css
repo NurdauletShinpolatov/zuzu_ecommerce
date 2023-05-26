@@ -1,6 +1,5 @@
 .header {
     padding: 5px 5%;
-    margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 }
@@ -9,6 +8,19 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.header__menu {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__menu:hover {
+    background: var(--cl-light-gray);
 }
 
 .header__item {
@@ -23,4 +35,9 @@
     font-size: 16px;
     line-height: 20px;
     color: var(--cl-black);
+}
+
+.header__language_img {
+    width: 24px;
+    border-radius: 50%;
 }

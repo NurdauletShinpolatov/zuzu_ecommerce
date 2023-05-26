@@ -1,0 +1,18 @@
+.category {
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.category__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 1.5rem;
+}
+
+.products {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}

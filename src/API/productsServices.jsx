@@ -7,7 +7,13 @@ const instance = axios.create({
 })
 
 export const productsServices = {
-    getAll: () => {
+    getAllProducts: () => {
         return instance.get().then(res => res.data)
+    },
+    getSingleProduct: (id) => {
+        return instance.get("/"+id).then(res => res.data)
+    },
+    getAllCategories:  () => {
+        return instance.get("/categories").then(res => res.data)
     }
 }
