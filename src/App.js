@@ -65,14 +65,19 @@ import About from './components/About/About';
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
+  console.log(loading);
 
   useEffect(() => {
+    setLoading(true)
     productsServices.getAllProducts().then((res) => {
       dispatch(setProductsAC(res));
     });
 
     productsServices.getAllCategories().then((res) => {
       dispatch(setCategoriesAC(res));
+    }).finally(() => {
+      setLoading(false)
     })
   }, [])
   return (
@@ -80,7 +85,7 @@ function App() {
       <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
       <Routes>
-        <Route path='/' element={ <Home /> } />
+        <Route path='/' element={ <Home loading={loading} /> } />
         <Route path='/branches' element={ <Branches /> } />
         <Route path='/contact' element={ <Contact /> } />
         <Route path='/about' element={ <About /> } />

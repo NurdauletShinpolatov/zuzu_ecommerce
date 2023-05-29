@@ -8,7 +8,7 @@ import ModalSP from '../ModalSP/ModalSP'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCategoriesAC, setProductsAC } from '../../redux/productReducer'
 
-const Home = () => {
+const Home = ({loading}) => {
   const products = useSelector(state => state.product.products)
   const categories = useSelector(state => state.product.categories)
   const dispatch = useDispatch()
@@ -40,7 +40,15 @@ const Home = () => {
         <img className={styles.header__image} src={headerImage} alt="" />
       </div>
       <div className={styles.products__section}>
-        {sectionsJSX}
+        {
+          loading ? (
+            <div className="loading">
+              Loading ...
+            </div>
+          ):(
+            sectionsJSX
+          )
+        }
         <ModalSP />
       </div>
     </div>
