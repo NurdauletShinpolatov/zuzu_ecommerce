@@ -42,8 +42,8 @@ const Home = ({loading}) => {
       <div className={styles.products__section}>
         {
           loading ? (
-            <div className="loading">
-              Loading ...
+            <div className="progress">
+              <div className="indeterminate"></div>
             </div>
           ):(
             sectionsJSX

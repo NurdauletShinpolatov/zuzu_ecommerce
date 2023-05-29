@@ -7,12 +7,12 @@ const Sidebar = ({isSidebarOpen, setIsSidebarOpen}) => {
     
   return (
     <Drawer anchor='left' open={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
-        <nav className={styles.navlinks}>
+        <div className={styles.navlinks}>
             <Link onClick={() => setIsSidebarOpen(false)} className={styles.black} to="/">Home</Link>
             <Link onClick={() => setIsSidebarOpen(false)} className={styles.black} to="/branches">Branches</Link>
             <Link onClick={() => setIsSidebarOpen(false)} className={styles.black} to="/about">About</Link>
             <Link onClick={() => setIsSidebarOpen(false)} className={styles.black} to="/contact">Contact</Link>
-        </nav>
+        </div>
     </Drawer>
   )
 }

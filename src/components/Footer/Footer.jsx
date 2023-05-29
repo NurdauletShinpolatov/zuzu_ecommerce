@@ -12,11 +12,11 @@ const Footer = () => {
       <div className={styles.footer__container}>
         <div className={styles.upper}>
           <img src={zuzuLogo} alt="" />
-          <nav className={styles.navlinks}>
+          <div className={styles.navlinks}>
             <Link className={styles.black} to="/branches">Branches</Link>
             <Link className={styles.black} to="/about">About</Link>
             <Link className={styles.black} to="/contact">Contact</Link>
-          </nav>
+          </div>
           <div></div>
         </div>
         <div className={styles.line}></div>
