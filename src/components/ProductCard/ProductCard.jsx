@@ -42,7 +42,7 @@ const ProductCard = ({product:prod}) => {
             {prod.title.slice(0, 15)+"..."}
         </div>
         <div className={styles.product__description}>
-            {prod.description.slice(0, 100)+"..."}
+            {prod.description.slice(0, 60)+"..."}
         </div>
         <div className={styles.product__action}>
             <span className={styles.product__price}>{"$"+prod.price}</span>

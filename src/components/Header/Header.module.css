@@ -41,3 +41,13 @@
     width: 24px;
     border-radius: 50%;
 }
+/* =============== Media queries =================================== */
+@media only screen and (max-width: 680px) {
+    .header__location,
+    .header__basket,
+    .header__language,
+    .header__account_title
+    {
+        display: none;
+    }
+}

@@ -30,27 +30,30 @@ const Home = ({loading}) => {
   
   return (
     <div className={styles.home}>
-      <div className={styles.header__image_container}>
-        <div className={`${styles.arrow__bg} ${styles.arrow__bg_left}`}>
-          <img src={arrowDown} alt="Arrow left" />
-        </div>
-        <div className={`${styles.arrow__bg} ${styles.arrow__bg_right}`}>
-          <img src={arrowDown} alt="Arrow right" />
-        </div>
-        <img className={styles.header__image} src={headerImage} alt="" />
-      </div>
-      <div className={styles.products__section}>
         {
           loading ? (
             <div className="progress">
               <div className="indeterminate"></div>
             </div>
           ):(
-            sectionsJSX
+            <>
+            <div className={styles.header__image_container}>
+              <div className={`${styles.arrow__bg} ${styles.arrow__bg_left}`}>
+                <img src={arrowDown} alt="Arrow left" />
+              </div>
+              <div className={`${styles.arrow__bg} ${styles.arrow__bg_right}`}>
+                <img src={arrowDown} alt="Arrow right" />
+              </div>
+              <img className={styles.header__image} src={headerImage} alt="" />
+            </div>
+            <div className={styles.products__section}>
+              { sectionsJSX }
+              <ModalSP />
+            </div>
+          </>
           )
         }
-        <ModalSP />
-      </div>
+      
     </div>
   )
 }

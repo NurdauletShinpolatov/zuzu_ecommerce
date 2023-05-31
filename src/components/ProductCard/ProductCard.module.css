@@ -6,6 +6,7 @@
 
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .product__image__container {
@@ -83,3 +84,16 @@
     font-size: 16px;
     line-height: 20px;
 }
+
+@media only screen and (max-width: 375px) { 
+    .product__title{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .product__description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+ }
