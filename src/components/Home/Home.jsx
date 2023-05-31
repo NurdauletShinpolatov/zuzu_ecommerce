@@ -6,28 +6,40 @@ import headerImage from '../../assets/images/headerImage.png'
 import arrowDown from '../../assets/images/arrowDown.png'
 import ModalSP from '../ModalSP/ModalSP'
 import { useDispatch, useSelector } from 'react-redux'
-import { setCategoriesAC, setProductsAC } from '../../redux/productReducer'
+import { setProductsAC } from '../../redux/productReducer'
 
-const Home = ({loading}) => {
+const formatData = (array) => {
+  let res = [];
+  array.map((prod) => {
+    if(res.find((category) => category.title == prod.category)){
+      res = res.map(category => category.title == prod.category ? {...category, products: [...category.products, prod]} : category )
+    } else {
+      res = [...res, {
+        title: prod.category,
+        products: [prod]
+      }]
+    }
+  })
+  return res
+}
+
+const Home = () => {
   const products = useSelector(state => state.product.products)
-  const categories = useSelector(state => state.product.categories)
   const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   productsServices.getAllProducts().then((res) => {
-  //     dispatch(setProductsAC(res));
-  //   });
+  const [loading, setLoading] = useState(false)
 
-  //   productsServices.getAllCategories().then((res) => {
-  //     dispatch(setCategoriesAC(res));
-  //   })
-  // }, [])
-
-
-  const sectionsJSX = categories.map(category => (
-    <Category category={category} products={products} />
-  ))
+  useEffect(() => {
+    setLoading(true)
+    productsServices.getAllProducts().then((res) => {
+      dispatch(setProductsAC(res));
+    }).finally(() => setLoading(false));
+  }, [])
   
+  const sectionsJSX = formatData(products).map((category => (
+    <Category category={category}/>
+  )))
+
   return (
     <div className={styles.home}>
         {

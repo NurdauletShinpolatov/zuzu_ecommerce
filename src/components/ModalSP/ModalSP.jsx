@@ -23,8 +23,6 @@ const style = {
 function ModalSP() {
   const selectedProduct = useSelector(state => state.product.selectedProduct)
   const products = useSelector(state => state.product.products)
-  const cart = useSelector(state => state.product.cart)
-  const user = useSelector(state => state.user)
   const dispatch = useDispatch()
   const [cnt, setCnt] = useState(1);
   const [isOpen, setIsOpen] = useState(false)

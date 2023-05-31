@@ -47,19 +47,6 @@ const ProductCard = ({product:prod}) => {
         <div className={styles.product__action}>
             <span className={styles.product__price}>{"$"+prod.price}</span>
             {
-              // cart.length == 0 ? (
-              //     <button onClick={selectProduct} className={styles.product__btn}>Select</button>
-              //   ) : (
-              //     cart.map(order => order.productID == prod.id ? (
-              //       <div className={styles.counter}>
-              //         <button onClick={decrementCnt} className={styles.counter__btn}>-</button>
-              //         <p  className={styles.counter__txt}>{ order.quantity }</p>
-              //         <button onClick={incrementCnt} className={styles.counter__btn}>+</button>
-              //       </div>
-              //     ) : (
-              //       <button onClick={selectProduct} className={styles.product__btn}>Select</button>
-              //     ))
-              //   )
               cnt == 0 ? (
                 <button onClick={selectProduct} className={styles.product__btn}>Select</button>
               ) : (

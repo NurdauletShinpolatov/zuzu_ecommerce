@@ -1,6 +1,5 @@
 const SET_SELECTED_PRODUCT = "SET_SELECTED_PRODUCT"
 const SET_PRODUCTS = "SET_PRODUCTS"
-const SET_CATEGORIES = "SET_CATEGORIES"
 const ADD_TO_CART = "ADD_TO_CART"
 const INCREMENT_QUANTITY = "INCREMENT_QUANTITY"
 const DECREMENT_QUANTITY = "DECREMENT_QUANTITY"
@@ -10,19 +9,8 @@ const CLEAR_CART = "CLEAR_CART"
 const initialState = {
     selectedProduct: "",
     products: [],
-    categories: [],
     cart: []
 }
-
-// {
-//     productID: 10,
-//     quantity: 1
-// },
-// {
-//     productID: 11,
-//     quantity: 3
-// }
-
 
 export const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -30,8 +18,6 @@ export const productReducer = (state = initialState, action) => {
             return {...state, selectedProduct: action.productID}
         case SET_PRODUCTS:
             return {...state, products: action.products}
-        case SET_CATEGORIES:
-            return {...state, categories: action.categories}
         case ADD_TO_CART:
             return {...state, cart: [...state.cart, action.order]}
         case INCREMENT_QUANTITY:
@@ -61,12 +47,6 @@ export const setProductsAC = (productsArray) => {
     return {
         type: SET_PRODUCTS,
         products: productsArray
-    }
-}
-export const setCategoriesAC = (categoriesArray) => {
-    return {
-        type: SET_CATEGORIES,
-        categories: categoriesArray
     }
 }
 export const addOrderToCartAC = (order) => {

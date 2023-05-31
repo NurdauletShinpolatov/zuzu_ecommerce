@@ -1,4 +1,20 @@
 Tasks:
     - button colors when pressed
-    - responsiveness tablet 
-    - responsiveness mobile
+    - home responsiveness
+    - cart responsiveness
+        # sizes
+        # cartOrder layout
+        # drawer from bottom
+    - category navigation
+
+
+
+promise works later, than other parts of the code
+
+!learn async
+
+event loop
+
+raect-query
+hook-form
+validation

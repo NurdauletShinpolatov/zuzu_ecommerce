@@ -3,7 +3,6 @@ import styles from './Cart.module.css'
 import trashIcon from '../../assets/images/trashIcon.png'
 import { useDispatch, useSelector } from 'react-redux'
 import CartOrder from '../CartOrder/CartOrder'
-import { productsServices } from '../../API/productsServices'
 import { clearCartAC } from '../../redux/productReducer'
 import { Link } from 'react-router-dom'
 import yellowCartIcon from '../../assets/images/yellowCartIcon.png'
@@ -12,15 +11,6 @@ const Cart = () => {
     const cart = useSelector(state => state.product.cart);
     const products = useSelector(state => state.product.products);
     const dispatch = useDispatch()
-
-    // const [cartProducts, setCartProducts] = useState([]);
-    // useEffect(() => {
-    //     cart.map(order => {
-    //         let tempOrder = productsServices.getSingleProduct(order.productID)
-    //         tempOrder.quantity = order.quantity
-    //         setCartProducts([...cartProducts, tempOrder])
-    //     })
-    // }, [cart])
 
     const cartProducts = cart.map(order => {
         let product = products.find(prod => prod.id == order.productID)

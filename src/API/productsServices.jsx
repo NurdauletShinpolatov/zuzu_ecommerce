@@ -9,7 +9,6 @@ const instance = axios.create({
 export const productsServices = {
     getAllProducts: () => {
         return instance.get().then(res => {
-            console.log(res);
             return res.data})
     },
     getSingleProduct: (id) => {

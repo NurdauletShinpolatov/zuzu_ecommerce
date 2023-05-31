@@ -1,17 +1,18 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import ProductCard from '../ProductCard/ProductCard'
 import styles from './Category.module.css'
 
-const Category = ({category, products}) => {
+const Category = ({category}) => {
 
   return (
     <section key={category} className={styles.category}>
       <h1 className={styles.category__title}>
-        {category.slice(0,1).toUpperCase()+category.slice(1)}
+        {category.title.slice(0,1).toUpperCase()+category.title.slice(1)}
       </h1>
       <div className={styles.products}>
         {
-          products.filter(prod => prod.category == category).map(prod => (
+          category.products.map(prod => (
             <ProductCard product={prod}/>
           ))
         }
