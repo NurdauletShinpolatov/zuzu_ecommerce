@@ -10,7 +10,7 @@ import { setProductsAC } from '../../redux/productReducer'
 
 const formatData = (array) => {
   let res = [];
-  array.map((prod) => {
+  array.forEach((prod) => {
     if(res.find((category) => category.title == prod.category)){
       res = res.map(category => category.title == prod.category ? {...category, products: [...category.products, prod]} : category )
     } else {

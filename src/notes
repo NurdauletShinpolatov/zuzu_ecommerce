@@ -6,6 +6,7 @@ Tasks:
         # cartOrder layout
         # drawer from bottom
     - category navigation
+    - slider
 
 
 
@@ -18,3 +19,7 @@ event loop
 raect-query
 hook-form
 validation
+
+
+1. If the product data is relatively stable and doesn't change frequently, Option 1 might be more suitable as it reduces API requests and provides a preprocessed data structure.
+2. If the product data changes frequently or requires real-time updates, Option 2 would be better as it allows you to work with the latest data without the need for preprocessing.
