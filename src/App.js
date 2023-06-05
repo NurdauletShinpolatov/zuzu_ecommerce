@@ -15,7 +15,7 @@ import { setCategoriesAC, setProductsAC } from './redux/productReducer';
 import About from './components/About/About';
 
 // https://www.figma.com/file/u0IJT6bWYrz7t2wnkEXOju/Logo?type=design&node-id=376-18595&t=bevpLDGWgHzL25dT-0
-// https://fakestoreapi.com/
+
 
 // export const branches = [
 //   {

@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://fakestoreapi.com/products'
+const BASE_URL = 'https://64787df0362560649a2de3aa.mockapi.io/products'
 
 
 const instance = axios.create({
